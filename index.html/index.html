@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>unit.SIX | Creative Studio</title>
+    <link rel="icon" type="image/jpg" href="studioicon.jpg">
+    <style>
+        :root {
+            /* --- COLOR & TEXTURE SETTINGS --- */
+            /* Edit these hex codes to change the overall theme colors */
+            --concrete-base: #868686;      /* Main light grey background */
+            --accent-black: #000000;       /* Primary text and border color */
+            --text-dark: #333333;          /* Secondary text color */
+            --border-line: rgba(0, 0, 0, 0.15); /* Subtle divider lines */
+        }
+
+        body {
+            font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: var(--concrete-base);
+            
+            /* --- BACKGROUND TEXTURE --- */
+            /* This creates the concrete "feel" using a light overlay and a pattern */
+            background-image: 
+                linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px),
+                url("https://www.transparenttextures.com/patterns/concrete-wall.png"); 
+            color: var(--accent-black);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* --- NAVIGATION / HEADER --- */
+        header {
+            padding: 60px 8%;
+            background: rgba(255, 255, 255, 0.2); /* Semi-transparent white blur */
+            backdrop-filter: blur(8px);
+            border-bottom: 2px solid var(--accent-black);
+        }
+
+        .logo {
+            font-size: 3.5rem;
+            font-weight: 200;
+            letter-spacing: -3px;
+            line-height: 0.8;
+            color: var(--accent-black);
+        }
+
+        .logo span {
+            display: block;
+            font-weight: 800;
+            font-size: 2.2rem;
+            margin-left: 50px;
+            text-transform: uppercase;
+        }
+
+        /* --- GENERAL SECTION STYLING --- */
+        section {
+            padding: 80px 8%;
+            border-bottom: 1px solid var(--border-line);
+        }
+
+        h2 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: var(--accent-black);
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* The black line next to section titles */
+        h2::after {
+            content: "";
+            flex: 1;
+            height: 2px;
+            background: var(--accent-black);
+            margin-left: 20px;
+        }
+
+        /* Layout grid for side-by-side content */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        /* --- THE SPACE CARDS --- */
+        .space-card {
+            background: rgba(255, 255, 255, 0.4);
+            border: 1px solid var(--border-line);
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
+        }
+
+        .stat-label {
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            color: #555;
+        }
+
+        /* --- PRICING TABLE STYLING --- */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            text-align: left;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: #555;
+            padding-bottom: 20px;
+        }
+
+        td {
+            padding: 15px 0;
+            border-top: 1px solid var(--border-line);
+        }
+
+        .price-bold { font-weight: 700; font-size: 1.2rem; }
+
+        /* Equipment and facility list bullets */
+        .equip-list { list-style: none; padding: 0; }
+        .equip-list li { 
+            margin-bottom: 8px; 
+            font-size: 1.1rem; 
+            border-left: 3px solid var(--accent-black);
+            padding-left: 10px;
+        }
+
+        /* Responsive design for mobile phones */
+        @media (max-width: 900px) {
+            .content-grid { grid-template-columns: 1fr; }
+            .logo { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">unit.<span>SIX</span></div>
+    
+</header>
+
+<section id="concept">
+    <h2>the concept</h2>
+    <p style="font-size: 1.4rem; max-width: 800px;">
+This is a concept by Zerosix that provides creatives with a
+fully functioning studio space, designed to help them
+unleash their creative potential. The space is always open to
+the public, encouraging a free flow of creative individuals,
+ideas, and concepts.     </p>
+</section>
+
+<section id="space">
+    <h2>the space</h2>
+    <div class="content-grid">
+        <div class="space-card">
+            <div class="stat-box">
+                <span class="stat-label">Total Floor Area</span>
+                <span class="stat-value">300m²</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-label">Cyclorama Dimensions</span>
+                <span class="stat-value">8m × 3.8m × 4.8m</span>
+                <small>(Width × Depth × Height)</small>
+            </div>
+        </div>
+        <div class="space-card">
+            <div class="stat-box">
+                <span class="stat-label">On-Site Facilities</span>
+                <ul class="equip-list" style="margin-top:15px;">
+                    <li>Makeup Station</li>
+                    <li>Two Private Fitting Rooms</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="pricing">
+    <h2>pricing deck</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Sessions</th>
+                <th>Rate/Hour</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>2 Hours</td><td>1,250 EGP</td><td class="price-bold">2,500 EGP</td></tr>
+            <tr><td>3 Hours</td><td>1,250 EGP</td><td class="price-bold">3,750 EGP</td></tr>
+            <tr><td>4 Hours</td><td>1,250 EGP</td><td class="price-bold">5,000 EGP</td></tr>
+            
+            <tr><td>5 Hours (Half-Day)</td><td>1,125 EGP</td><td class="price-bold">5,625 EGP</td></tr>
+            <tr><td>6 Hours</td><td>1,125 EGP</td><td class="price-bold">6,750 EGP</td></tr>
+            <tr><td>7 Hours</td><td>1,125 EGP</td><td class="price-bold">7,875 EGP</td></tr>
+            
+            <tr><td>8 Hours</td><td>1,060 EGP</td><td class="price-bold">8,500 EGP</td></tr>
+            <tr><td>9 Hours</td><td>1,045 EGP</td><td class="price-bold">9,400 EGP</td></tr>
+            <tr><td>10 Hours (Full-Day)</td><td>1,000 EGP</td><td class="price-bold">10,000 EGP</td></tr>
+        </tbody>
+    </table>
+</section>
+
+<section id="equipment">
+    <h2>equipment</h2>
+    <div class="content-grid">
+        <div class="equip-category">
+            <h3>Flash</h3>
+            <ul class="equip-list">
+                <li>Godox DP1000 x2 (Included)</li>
+                <li>Godox DP400 x1 (Included)</li>
+                <li>Trigger (Included)</li>
+            </ul>
+
+            <h3>Continuous</h3>
+            <ul class="equip-list">
+                <li>Godox Litemons LE300BI x2 (Included)</li>
+            </ul>
+            
+            <h3>Other</h3>
+            <ul class="equip-list">
+                <li>Color Gels (Included)</li>
+                <li>Paper Backdrops (Additional 250EGP/Roll)</li>
+                <li>Fabric Backdrops (Additional 350EGP/Roll)</li>
+                <li>Custom Backdrops (Additional 450EGP/Roll)</li>
+            </ul>
+        </div>
+
+        <div class="equip-category">
+            <h3>Modifiers</h3>
+            <ul class="equip-list">
+                <li>Octa Softbox 90CM x2 (Included)</li>
+                <li>Octa Softbox 120CM x1 (Included)</li>
+                <li>Lantern Softbox x1 (Included)</li>
+                <li>Beauty Dish x1 (Included)</li>
+                <li>Strip Softbox x2 (Included)</li>
+                <li>Softboxes x2 (Included)</li>
+                <li>General Parabolic 120CM x1 (Included)</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="policy">
+    <h2>studio policy</h2>
+    
+    <div class="content-grid">
+        <div class="policy-box">
+            <h3>2. Care of the Space and Equipment</h3>
+            <ul class="policy-list">
+                <li>
+                    <strong>Equipment Use:</strong>
+                    All equipment, including lights, modifiers, and other tools, must be handled with care. Customers are expected to follow the provided guidelines for proper usage.
+                </li>
+                <li>
+                    <strong>Damage Liability:</strong>
+                    Any damage to the studio space or equipment caused during the booking will be assessed, and the customer will be held financially responsible for repair or replacement costs.
+                </li>
+                <li>
+                    <strong>Cleanliness:</strong>
+                    Customers are expected to leave the studio in the same condition as they found it.
+                </li>
+            </ul>
+        </div>
+
+        <div class="policy-box">
+            <h3>3. Cancellation and Refunds</h3>
+            <ul class="policy-list">
+                <li>
+                    <strong>Cancellation Policy:</strong>
+                    Cancellations made less than 48 hours before the scheduled booking time will result in the forfeiture of the deposit. For cancellations made earlier, the deposit may be refunded or transferred to a future booking.
+                </li>
+                <li>
+                    <strong>No-Show Policy:</strong>
+                    If a customer does not show up for their booking without prior notice, either the full amount will be charged or the client will be requested for 50% deposit on all future reservations.
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <p style="margin-top: 40px; font-style: italic; border-top: 1px solid var(--border-line); padding-top: 20px;">
+        This policy is designed to ensure a smooth experience for all customers and to maintain the quality and integrity of THE STUDIO space. By booking with us, customers agree to adhere to these terms and conditions.
+    </p>
+</section>
+<footer style="padding: 40px 8%; font-size: 0.8rem; text-align: center; color: #666;">
+    UNIT SIX | A Zerosix Concept 
+</footer>
+
+</body>
+</html>
